@@ -1,0 +1,35 @@
+/* Header.css */
+.header-container {
+    background: var(--color-blue);
+    font-family: var(--font-main);
+    padding: var(--space-md) var(--space-lg);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow-md);
+    transition: background var(--transition-base);
+}
+
+.header-title {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-white);
+    margin: 0;
+}
+
+.hamburger-menu {
+    width: 30px;
+    height: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    display: block;
+    height: 3px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-sm);
+}

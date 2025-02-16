@@ -1,0 +1,96 @@
+/* variables.css */
+
+/* Import the Poppins font */
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
+
+:root {
+    /* ---------------------------------
+   * COLORS
+   * --------------------------------- */
+    --color-blue: #00A7D6;
+    --color-orange: #FF5F1B;
+    --color-pink: #C32865;
+    --color-gray: #D9D9D9;
+    --color-black: #000000;
+    --color-white: #ffffff;
+
+    /* ---------------------------------
+   * TYPOGRAPHY
+   * --------------------------------- */
+    --font-main: 'Raleway', sans-serif;
+
+    /* Font sizes (using a modular scale) */
+    --font-size-xxs: 0.625rem;
+    /* 10px */
+    --font-size-xs: 0.75rem;
+    /* 12px */
+    --font-size-sm: 0.875rem;
+    /* 14px */
+    --font-size-md: 1rem;
+    /* 16px */
+    --font-size-lg: 1.25rem;
+    /* 20px */
+    --font-size-xl: 1.5rem;
+    /* 24px */
+    --font-size-xxl: 2rem;
+    /* 32px */
+
+    /* Font weights */
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line heights */
+    --line-height-normal: 1.5;
+    --line-height-heading: 1.2;
+
+    /* ---------------------------------
+   * SPACING
+   * --------------------------------- */
+    /* A spacing scale (can be used for padding, margins, gap, etc.) */
+    --space-xxs: 4px;
+    --space-xs: 8px;
+    --space-sm: 12px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-xxl: 48px;
+
+    /* ---------------------------------
+   * BREAKPOINTS
+   * --------------------------------- */
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+
+    /* ---------------------------------
+   * BORDER RADIUS
+   * --------------------------------- */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+
+    /* ---------------------------------
+   * SHADOWS
+   * --------------------------------- */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    /* ---------------------------------
+   * TRANSITIONS
+   * --------------------------------- */
+    --transition-fast: 0.2s ease-in-out;
+    --transition-base: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+
+    /* ---------------------------------
+   * Z-INDEX
+   * --------------------------------- */
+    --z-index-dropdown: 1000;
+    --z-index-sticky: 1020;
+    --z-index-fixed: 1030;
+    --z-index-modal: 1050;
+    --z-index-popover: 1070;
+}
