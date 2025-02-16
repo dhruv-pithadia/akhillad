@@ -1,4 +1,4 @@
-/* Header.css */
+/* Header container styling */
 .header-container {
     background: var(--color-blue);
     font-family: var(--font-main);
@@ -11,6 +11,7 @@
     transition: background var(--transition-base);
 }
 
+/* Title styling */
 .header-title {
     font-size: var(--font-size-xxl);
     font-weight: var(--font-weight-semibold);
@@ -18,18 +19,143 @@
     margin: 0;
 }
 
+/* ---------------------------------
+ * NAV ITEMS (Desktop hover dropdown)
+ * --------------------------------- */
+.nav-items {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background-color: var(--color-pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+/* For desktop: on header hover, reveal nav items */
+.header-container:hover .nav-items {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* List styling */
+.nav-items ul {
+    list-style: none;
+    display: flex;
+    gap: var(--space-xxl);
+    margin: 0;
+    padding: 0;
+}
+
+.nav-items li {
+    position: relative;
+    padding: 0.5rem 1rem;
+    color: var(--color-white);
+    font-family: var(--font-main);
+    font-size: var(--font-size-md);
+    cursor: pointer;
+    overflow: hidden;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+/* 3D background effect for links */
+.nav-items li::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, var(--color-pink), var(--color-orange));
+    transform: rotateX(-90deg);
+    transform-origin: bottom;
+    transition: transform 0.3s ease;
+    z-index: -1;
+}
+
+.nav-items li:hover::before {
+    transform: rotateX(0deg);
+}
+
+.nav-items li:hover {
+    transform: translateY(-3px);
+}
+
+/* ---------------------------------
+ * HAMBURGER MENU (Mobile only)
+ * --------------------------------- */
 .hamburger-menu {
+    display: none;
     width: 30px;
     height: 20px;
-    display: flex;
+    cursor: pointer;
     flex-direction: column;
     justify-content: space-between;
-    cursor: pointer;
 }
 
 .hamburger-menu span {
     display: block;
+    width: 100%;
     height: 3px;
     background-color: var(--color-white);
-    border-radius: var(--radius-sm);
+    border-radius: 2px;
+}
+
+/* ---------------------------------
+ * MEDIA QUERIES (Mobile Styles)
+ * --------------------------------- */
+@media (max-width: 786px) {
+
+    /* Show hamburger menu on mobile */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    /* Mobile nav-items: position it fixed and slide from the left */
+    .nav-items {
+        position: fixed;
+        top: 60px;
+        /* Just below the header */
+        left: 0;
+        width: 80%;
+        /* Adjust width as needed */
+        height: 100vh;
+        background-color: var(--color-pink);
+        flex-direction: column;
+        opacity: 0;
+        transform: translateX(-100%);
+        pointer-events: none;
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        z-index: 1000;
+    }
+
+    /* When open, the nav slides in from the left */
+    .nav-items.open {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* Stack the nav items vertically on mobile */
+    .nav-items ul {
+        flex-direction: column;
+        gap: var(--space-md);
+        margin: 0;
+        padding: var(--space-md) 0;
+    }
+
+    /* Disable desktop hover dropdown on mobile */
+    .header-container:hover .nav-items {
+        opacity: 0;
+        transform: translateX(-100%);
+        pointer-events: none;
+    }
 }
