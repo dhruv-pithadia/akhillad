@@ -1,161 +1,215 @@
-/* Header container styling */
-.header-container {
+/* ---------------------------
+   GLOBAL & DESKTOP STYLES
+--------------------------- */
+
+/* Header container */
+.header-main {
     background: var(--color-blue);
     font-family: var(--font-main);
-    padding: var(--space-md) var(--space-lg);
-    height: 60px;
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: var(--shadow-md);
-    transition: background var(--transition-base);
+    align-items: flex-start;
+    position: relative;
 }
 
-/* Title styling */
-.header-title {
-    font-size: var(--font-size-xxl);
-    font-weight: var(--font-weight-semibold);
+/* Header Title */
+.header-title img {
     color: var(--color-white);
-    margin: 0;
+    font-weight: 700;
+    padding: var(--space-md);
+    width: 130px;
 }
 
-/* ---------------------------------
- * NAV ITEMS (Desktop hover dropdown)
- * --------------------------------- */
-.nav-items {
+/* Desktop Menu (hidden by default; appears on hover) */
+.desktop-menu {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 80px;
-    background-color: var(--color-pink);
+    height: 120px;
     display: flex;
-    align-items: center;
     justify-content: center;
+    background-color: var(--color-pink);
     opacity: 0;
+    visibility: hidden;
     transform: translateY(-10px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    pointer-events: none;
 }
 
-/* For desktop: on header hover, reveal nav items */
-.header-container:hover .nav-items {
+/* Show desktop menu on header hover */
+.header-main:hover .desktop-menu {
     opacity: 1;
+    visibility: visible;
     transform: translateY(0);
-    pointer-events: auto;
 }
 
-/* List styling */
-.nav-items ul {
+.desktop-menu ul {
     list-style: none;
     display: flex;
+    justify-content: center;
+    align-items: center;
     gap: var(--space-xxl);
     margin: 0;
-    padding: 0;
+    padding: var(--space-md);
 }
 
-.nav-items li {
-    position: relative;
-    padding: 0.5rem 1rem;
+.desktop-menu li a {
     color: var(--color-white);
-    font-family: var(--font-main);
+    text-decoration: none;
     font-size: var(--font-size-md);
-    cursor: pointer;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    transition: transform 0.3s ease;
+    font-weight: var(--font-weight-semibold);
+    position: relative;
+    display: inline-block;
+    /* Added for transform scaling to work */
+    transition: transform 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
 }
 
-/* 3D background effect for links */
-.nav-items li::before {
+/* Underline effect */
+.desktop-menu li a::after {
     content: "";
     position: absolute;
-    top: 0;
+    bottom: -5px;
     left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--color-orange);
+    transition: width 0.3s ease;
+}
+
+/* Hover state: scale text, increase font weight, change color, and reveal underline */
+.desktop-menu li a:hover {
+    transform: scale(1.1);
+    font-weight: var(--font-weight-bold);
+}
+
+.desktop-menu li a:hover::after {
     width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, var(--color-pink), var(--color-orange));
-    transform: rotateX(-90deg);
-    transform-origin: bottom;
-    transition: transform 0.3s ease;
-    z-index: -1;
 }
 
-.nav-items li:hover::before {
-    transform: rotateX(0deg);
-}
+/* ---------------------------
+   MOBILE STYLES
+--------------------------- */
 
-.nav-items li:hover {
-    transform: translateY(-3px);
-}
-
-/* ---------------------------------
- * HAMBURGER MENU (Mobile only)
- * --------------------------------- */
-.hamburger-menu {
+/* Quick Menu Button at the Bottom Center */
+.quick-menu-button {
     display: none;
-    width: 30px;
-    height: 20px;
-    cursor: pointer;
-    flex-direction: column;
-    justify-content: space-between;
+    /* hidden on desktop */
 }
 
-.hamburger-menu span {
-    display: block;
-    width: 100%;
-    height: 3px;
-    background-color: var(--color-white);
-    border-radius: 2px;
+/* The horizontally scrollable mobile menu container */
+.mobile-scroll-menu {
+    display: none;
+    /* hidden on desktop */
 }
 
-/* ---------------------------------
- * MEDIA QUERIES (Mobile Styles)
- * --------------------------------- */
+/* -------------- MEDIA QUERIES -------------- */
 @media (max-width: 786px) {
 
-    /* Show hamburger menu on mobile */
-    .hamburger-menu {
-        display: flex;
+    /* Hide desktop menu on mobile */
+    .desktop-menu {
+        display: none;
     }
 
-    /* Mobile nav-items: position it fixed and slide from the left */
-    .nav-items {
+    /* Quick Menu Button (visible on mobile, fixed at bottom center) */
+    .quick-menu-button {
         position: fixed;
-        top: 60px;
-        /* Just below the header */
+        bottom: var(--space-md);
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--color-pink);
+        color: var(--color-white);
+        padding: var(--space-sm) var(--space-md);
+        border-radius: 999px;
+        cursor: pointer;
+        z-index: 1100;
+        box-shadow: var(--shadow-md);
+        transition: background 0.3s ease;
+    }
+
+    /* Optional icon block */
+    .menu-icon {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQgN2g2VjVINFY3em0wIDRoNnYtMkg0djJ6bTAgNGg2di0ySDR2MnoiLz48L3N2Zz4=') no-repeat center center;
+        background-size: contain;
+        margin-right: var(--space-xs);
+    }
+
+    .menu-text {
+        font-size: var(--font-size-md);
+        font-weight: var(--font-weight-bold);
+    }
+
+    .quick-menu-button:hover {
+        background: var(--color-orange);
+    }
+
+    /* Horizontally scrollable mobile menu */
+    .mobile-scroll-menu {
+        position: fixed;
+        bottom: 0;
         left: 0;
-        width: 80%;
-        /* Adjust width as needed */
-        height: 100vh;
-        background-color: var(--color-pink);
-        flex-direction: column;
-        opacity: 0;
-        transform: translateX(-100%);
-        pointer-events: none;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-        z-index: 1000;
+        width: 100%;
+        height: 180px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        background: linear-gradient(135deg, rgba(0, 167, 214, 0.4), rgba(195, 40, 101, 0.4));
+        box-shadow: var(--shadow-md);
+        padding: 20px;
+        z-index: 1099;
+        transform: translateY(100%);
+        transition: transform 0.3s ease;
+        backdrop-filter: blur(14px);
     }
 
-    /* When open, the nav slides in from the left */
-    .nav-items.open {
-        transform: translateX(0);
-        opacity: 1;
-        pointer-events: auto;
+    /* When open, slide up into view */
+    .mobile-scroll-menu.open {
+        transform: translateY(0);
     }
 
-    /* Stack the nav items vertically on mobile */
-    .nav-items ul {
-        flex-direction: column;
-        gap: var(--space-md);
+    .mobile-scroll-menu ul {
+        display: flex;
+        gap: var(--space-sm);
         margin: 0;
-        padding: var(--space-md) 0;
+        padding: 0 var(--space-sm);
+        list-style: none;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+
     }
 
-    /* Disable desktop hover dropdown on mobile */
-    .header-container:hover .nav-items {
-        opacity: 0;
-        transform: translateX(-100%);
-        pointer-events: none;
+
+
+    .mobile-scroll-menu ul::-webkit-scrollbar {
+        display: none;
+        /* Chrome, Safari, Opera */
+    }
+
+    /* Each link styled like a "card" */
+    .mobile-scroll-menu li {
+        flex: 0 0 auto;
+        background: var(--color-white);
+        border-radius: var(--radius-md);
+        padding: var(--space-sm) var(--space-md);
+        margin: var(--space-xs) 0;
+        white-space: nowrap;
+        box-shadow: var(--shadow-sm);
+    }
+
+    .mobile-scroll-menu li a {
+        color: var(--color-pink);
+        font-size: var(--font-size-md);
+        font-weight: var(--font-weight-bold);
+        text-decoration: none;
+        transition: color 0.3s ease;
+    }
+
+    .mobile-scroll-menu li a:hover {
+        color: var(--color-orange);
     }
 }

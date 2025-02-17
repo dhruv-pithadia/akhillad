@@ -5,9 +5,9 @@ import '../static/Banner.css'
 export default class Banner extends Component {
     render() {
         return (
-            <div className="main-banner">
+            <div className="main-banner" id='banner'>
                 <div className="banner-text">
-                    <p>Howdy I’m Akhil Lad</p>
+                    <p>I am soaring new Horizons, because Sky’s not the limit to me! </p>
                 </div>
                 <div className="banner-image">
                     <img src={bannerImage} alt="Banner" className="banner-img" />

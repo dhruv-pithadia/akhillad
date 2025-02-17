@@ -35,16 +35,26 @@
   Example media query for smaller screens:
   Stack text and image vertically.
 */
-@media (max-width: var(--breakpoint-md)) {
+@media (max-width: 786px) {
     .main-banner {
         flex-direction: column;
         height: auto;
-        padding: var(--space-md);
+        gap: 10px;
     }
 
-    .banner-text,
-    .banner-image {
+    .banner-text {
+        margin-top: 70px;
         max-width: 100%;
         text-align: center;
     }
+
+    .banner-image {
+        width: 50%;
+        height: 380px;
+    }
+
+    .banner-text p {
+        font-size: 28px;
+    }
+
 }

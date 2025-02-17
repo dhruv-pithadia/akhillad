@@ -1,0 +1,130 @@
+.main-articles {
+    padding: var(--space-lg) var(--space-md);
+    background: linear-gradient(to bottom, #ffffff, #fdf0f5);
+}
+
+.text-articles h1 {
+    color: var(--color-pink);
+    margin-bottom: var(--space-xxl);
+    text-align: center;
+}
+
+/* Container that holds all the article cards */
+.articles-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+/* Each individual card */
+.articles-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: center;
+}
+
+/* Each individual card */
+.card-article {
+    background: transparent;
+    border: 1px solid #000;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.5);
+    width: 280px;
+    padding: var(--space-xxl);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+/* Slight lift on hover + pink background */
+.card-article:hover {
+    transform: translateY(-10px);
+    background: var(--color-pink);
+    color: #ffffff;
+    border: 1px solid #c32865;
+}
+
+/* Title inside the card */
+.card-article h3 {
+    margin: 0 0 var(--space-sm) 0;
+    font-size: var(--font-size-lg);
+    color: #333;
+}
+
+/* Description text */
+.desc p {
+    color: #555;
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    margin-bottom: var(--space-md);
+}
+
+/* When card is hovered, make text white */
+.card-article:hover h3,
+.card-article:hover .desc p {
+    color: #fff;
+}
+
+/* Button styling */
+.card-article button {
+    background: var(--color-orange);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: background 0.3s ease, color 0.3s ease;
+    align-self: flex-start;
+}
+
+.card-article button:hover {
+    background: transparent;
+}
+
+/* On hover, invert button colors (white bg + pink text) */
+.card-article:hover button {
+    background: #fff;
+    color: var(--color-pink);
+}
+
+/* Button styling */
+.card-article button {
+    background: var(--color-orange);
+    color: #fff;
+    border: none;
+    border-radius: var(--radius-sm);
+    padding: var(--space-xs) var(--space-sm);
+    cursor: pointer;
+    font-size: var(--font-size-sm);
+    transition: background 0.3s ease;
+    align-self: flex-start;
+    /* or center, depending on your preference */
+}
+
+.card-article button:hover {
+    background: #e84e10;
+    /* a darker orange on hover */
+}
+
+
+.pink-card h3 {
+    color: #fff;
+}
+
+.pink-card .desc p {
+    color: #fff;
+}
+
+.pink-card button {
+    background: var(--color-white);
+    color: var(--color-pink);
+}
+
+.pink-card button:hover {
+    background: #f0f0f0;
+}

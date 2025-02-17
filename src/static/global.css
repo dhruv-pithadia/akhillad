@@ -3,6 +3,10 @@
 /* Import the Poppins font */
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
 
+html {
+    scroll-behavior: smooth;
+}
+
 :root {
     /* ---------------------------------
    * COLORS
