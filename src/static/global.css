@@ -1,7 +1,7 @@
 /* variables.css */
 
-/* Import the Poppins font */
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap");
+/* Import the Cormorant Garamond font */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&display=swap");
 
 html {
     scroll-behavior: smooth;
@@ -21,8 +21,7 @@ html {
     /* ---------------------------------
    * TYPOGRAPHY
    * --------------------------------- */
-    --font-main: 'Raleway', sans-serif;
-
+    --font-main: 'Cormorant Garamond', serif;
     /* Font sizes (using a modular scale) */
     --font-size-xxs: 0.625rem;
     /* 10px */

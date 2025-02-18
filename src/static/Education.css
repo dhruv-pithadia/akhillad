@@ -1,0 +1,63 @@
+.main-education {
+    font-family: var(--font-main);
+}
+
+/* If you want to place images or icons on the left or top, style .education-images here */
+.education-images {
+    /* Example:
+  width: 100px;
+  height: 100px;
+  background: url('../assets/your-image.png') no-repeat center center;
+  background-size: contain;
+  margin-bottom: var(--space-md);
+  */
+}
+
+.education-title {
+    color: var(--color-pink);
+    margin-bottom: var(--space-xxl);
+    text-align: center;
+    font-size: var(--font-size-xxl);
+}
+
+.education-content {
+    margin: var(--space-lg) auto 0;
+    padding: var(--space-lg) var(--space-md);
+    max-width: 900px;
+    background: linear-gradient(to bottom, #fce1e8, #eef8fc);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    text-align: center;
+}
+
+.science h1 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-xs);
+    color: #333;
+    position: relative;
+}
+
+.science h1::after {
+    content: "";
+    display: block;
+    width: 50%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+    margin: var(--space-sm) auto;
+}
+
+.science h2 {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--space-sm);
+    color: #666;
+}
+
+.science p {
+    font-size: var(--font-size-sm);
+    line-height: var(--line-height-normal);
+    color: #555;
+    margin: 0 auto var(--space-sm) auto;
+    max-width: 80%;
+}

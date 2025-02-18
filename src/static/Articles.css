@@ -1,24 +1,36 @@
 .main-articles {
+    position: relative;
     padding: var(--space-lg) var(--space-md);
     background: linear-gradient(to bottom, #ffffff, #fdf0f5);
+    overflow: hidden;
+    padding-bottom: 150px;
+    font-family: var(--font-main);
+}
+
+.main-articles::after {
+    content: "";
+    position: absolute;
+    bottom: -29px;
+    right: -450px;
+    width: 90%;
+    height: 80%;
+    background: url(../assets/cloud.png) no-repeat center center;
+    background-size: contain;
+    opacity: 1;
+    z-index: 0;
 }
 
 .text-articles h1 {
     color: var(--color-pink);
     margin-bottom: var(--space-xxl);
     text-align: center;
+    font-size: var(--font-size-xxl);
 }
 
-/* Container that holds all the article cards */
-.articles-card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-md);
-    justify-content: center;
-}
 
 /* Each individual card */
 .articles-card-container {
+    position: relative;
     display: flex;
     flex-wrap: wrap;
     gap: var(--space-md);
@@ -27,7 +39,7 @@
 
 /* Each individual card */
 .card-article {
-    background: transparent;
+    background: linear-gradient(to bottom, #ffffff, #fdf0f5);
     border: 1px solid #000;
     border-radius: var(--radius-lg);
     box-shadow: 0 4px 8px rgba(255, 165, 0, 0.5);
@@ -38,6 +50,7 @@
     justify-content: space-between;
     transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
     position: relative;
+    z-index: 1;
 }
 
 /* Slight lift on hover + pink background */
@@ -69,19 +82,6 @@
     color: #fff;
 }
 
-/* Button styling */
-.card-article button {
-    background: var(--color-orange);
-    color: #fff;
-    border: none;
-    border-radius: var(--radius-sm);
-    padding: var(--space-xs) var(--space-sm);
-    cursor: pointer;
-    font-size: var(--font-size-sm);
-    transition: background 0.3s ease, color 0.3s ease;
-    align-self: flex-start;
-}
-
 .card-article button:hover {
     background: transparent;
 }
@@ -102,13 +102,11 @@
     cursor: pointer;
     font-size: var(--font-size-sm);
     transition: background 0.3s ease;
-    align-self: flex-start;
-    /* or center, depending on your preference */
+    align-self: auto;
 }
 
 .card-article button:hover {
     background: #e84e10;
-    /* a darker orange on hover */
 }
 
 
@@ -127,4 +125,19 @@
 
 .pink-card button:hover {
     background: #f0f0f0;
+}
+
+@media (max-width: 786px) {
+    .card-article {
+        width: 220px;
+    }
+
+    .articles-card-container {
+        gap: var(--space-xl);
+    }
+
+    .main-articles::after {
+        content: none;
+        /* or you can set background: none; if you prefer */
+    }
 }

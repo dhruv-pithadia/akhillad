@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Banner from './components/Banner';  // Import your Banner component
 import './static/global.css';  // Import global CSS
 import Articles from './components/Articles';
+import Education from './components/Education';
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       <Header />
       <Banner />
       <Articles />
-      {/* Add other components here */}
+      <Education />
     </div>
   );
 }
