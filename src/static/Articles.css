@@ -1,7 +1,7 @@
 .main-articles {
     position: relative;
     padding: var(--space-lg) var(--space-md);
-    background: linear-gradient(to bottom, #ffffff, #fdf0f5);
+    background: linear-gradient(to bottom, #ffffff, #fbf1f500);
     overflow: hidden;
     padding-bottom: 150px;
     font-family: var(--font-main);

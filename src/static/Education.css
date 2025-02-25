@@ -1,20 +1,178 @@
-.main-education {
+.main-education,
+.sub-main-education {
+    position: relative;
     font-family: var(--font-main);
 }
 
-/* If you want to place images or icons on the left or top, style .education-images here */
-.education-images {
-    /* Example:
-  width: 100px;
-  height: 100px;
-  background: url('../assets/your-image.png') no-repeat center center;
-  background-size: contain;
-  margin-bottom: var(--space-md);
-  */
+.sub-main-education {
+    overflow-x: hidden;
 }
+
+
+.sub-main-education::after {
+    content: "";
+    position: absolute;
+    bottom: 80px;
+    right: -450px;
+    width: 90%;
+    height: 80%;
+    background: url(../assets/cloud.png) no-repeat center center;
+    background-size: contain;
+    opacity: 0.7;
+    z-index: 0;
+    scale: 0.4;
+}
+
+.education-images {
+    position: relative;
+    width: 1500px;
+    height: 700px;
+    margin: 0 auto;
+    overflow: hidden;
+    background: transparent;
+}
+
+/* Base styles for all images */
+.education-images img {
+    position: absolute;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    object-fit: cover;
+    transition: transform 0.3s ease;
+    width: 200px;
+    /* default width, can be overridden */
+}
+
+/* Hover effect: scale up and appear on top */
+.education-images img:hover {
+    transform: scale(1.05) !important;
+    /* override nth-child rotation */
+    z-index: 2;
+}
+
+/* Example positions for 13 images (adjust to your liking) */
+
+/* 1 */
+.education-images img:nth-child(1) {
+    top: 20px;
+    left: 50px;
+    width: 180px;
+    transform: rotate(-3deg);
+    opacity: 0.8;
+}
+
+/* 2 */
+.education-images img:nth-child(2) {
+    top: 100px;
+    left: 300px;
+    width: 220px;
+    transform: rotate(4deg);
+    opacity: 0.7;
+}
+
+/* 3 */
+.education-images img:nth-child(3) {
+    top: 260px;
+    left: 100px;
+    width: 160px;
+    transform: rotate(-2deg);
+    opacity: 0.6;
+}
+
+/* 4 */
+.education-images img:nth-child(4) {
+    top: 40px;
+    left: 550px;
+    width: 210px;
+    transform: rotate(1deg);
+    opacity: 0.9;
+}
+
+/* 5 */
+.education-images img:nth-child(5) {
+    top: 280px;
+    left: 500px;
+    width: 200px;
+    transform: rotate(-4deg);
+    opacity: 0.75;
+}
+
+/* 6 */
+.education-images img:nth-child(6) {
+    top: 200px;
+    left: 800px;
+    width: 220px;
+    transform: rotate(3deg);
+    opacity: 0.8;
+}
+
+/* 7 */
+.education-images img:nth-child(7) {
+    top: 0px;
+    left: 1000px;
+    width: 190px;
+    transform: rotate(-1deg);
+    opacity: 0.7;
+}
+
+/* 8 */
+.education-images img:nth-child(8) {
+    top: 380px;
+    left: 1250px;
+    width: 230px;
+    transform: rotate(5deg);
+    opacity: 0.9;
+}
+
+/* 9 */
+.education-images img:nth-child(9) {
+    top: 60px;
+    left: 1250px;
+    width: 220px;
+    transform: rotate(-3deg);
+    opacity: 0.65;
+}
+
+/* 10 */
+.education-images img:nth-child(10) {
+    top: 220px;
+    left: 1100px;
+    width: 180px;
+    transform: rotate(2deg);
+    opacity: 0.7;
+}
+
+/* 11 */
+.education-images img:nth-child(11) {
+    top: 450px;
+    left: 250px;
+    width: 190px;
+    transform: rotate(-2deg);
+    opacity: 0.8;
+}
+
+/* 12 */
+.education-images img:nth-child(12) {
+    top: 540px;
+    left: 600px;
+    width: 210px;
+    transform: rotate(4deg);
+    opacity: 0.9;
+}
+
+/* 13 */
+.education-images img:nth-child(13) {
+    top: 470px;
+    left: 900px;
+    width: 170px;
+    transform: rotate(-5deg);
+    opacity: 0.75;
+}
+
 
 .education-title {
     color: var(--color-pink);
+    margin-top: var(--space-xxl);
     margin-bottom: var(--space-xxl);
     text-align: center;
     font-size: var(--font-size-xxl);
@@ -23,41 +181,130 @@
 .education-content {
     margin: var(--space-lg) auto 0;
     padding: var(--space-lg) var(--space-md);
-    max-width: 900px;
+    max-width: 1080px;
     background: linear-gradient(to bottom, #fce1e8, #eef8fc);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
     position: relative;
     text-align: center;
+    z-index: 1;
 }
 
-.science h1 {
+.science h1,
+.keystone h1 {
     font-size: var(--font-size-xl);
     margin-bottom: var(--space-xs);
     color: #333;
     position: relative;
 }
 
-.science h1::after {
+.keystone h1 {
+    margin-top: 50px;
+}
+
+.science h1::after,
+.keystone h1::after {
     content: "";
     display: block;
-    width: 50%;
+    width: 70%;
     height: 1px;
     background-color: rgba(0, 0, 0, 0.2);
     margin: var(--space-sm) auto;
 }
 
-.science h2 {
+.science h3,
+.keystone h3 {
     font-size: var(--font-size-lg);
     margin-bottom: var(--space-sm);
     color: #666;
 }
 
-.science p {
+.science p,
+.keystone p {
     font-size: var(--font-size-sm);
     line-height: var(--line-height-normal);
     color: #555;
     margin: 0 auto var(--space-sm) auto;
     max-width: 80%;
+}
+
+.education-story {
+    font-family: var(--font-main);
+    font-size: var(--font-size-lg);
+    font-weight: 600;
+    font-style: italic;
+    color: #555;
+    text-align: center;
+    margin: var(--space-md) auto var(--space-lg) auto;
+    max-width: 800px;
+    padding: var(--space-xxl);
+    background: rgba(255, 255, 255, 0.8);
+    border-left: 4px solid var(--color-orange);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    line-height: var(--line-height-normal);
+}
+
+
+@media (max-width: 786px) {
+
+    .main-education,
+    .education-story {
+        padding: 10px;
+    }
+
+    .education-images {
+        width: 100%;
+        height: 400px;
+    }
+
+    .education-images img:nth-child(1) {
+        top: 10px;
+        left: 10px;
+        width: 120px;
+        transform: rotate(0deg);
+        opacity: 0.8;
+    }
+
+    .education-images img:nth-child(2) {
+        top: 50px;
+        left: 120px;
+        width: 130px;
+        transform: rotate(-2deg);
+        opacity: 0.7;
+    }
+
+    .education-images img:nth-child(3) {
+        top: 180px;
+        left: 30px;
+        width: 140px;
+        transform: rotate(2deg);
+        opacity: 0.6;
+    }
+
+    .education-images img:nth-child(4) {
+        top: 70px;
+        left: 260px;
+        width: 110px;
+        transform: rotate(-4deg);
+        opacity: 0.75;
+    }
+
+    .education-images img:nth-child(10) {
+        top: 200px;
+        left: 230px;
+        width: 120px;
+        transform: rotate(1deg);
+        opacity: 0.8;
+    }
+
+    .education-images img:nth-child(6) {
+        top: 300px;
+        left: 80px;
+        width: 140px;
+        transform: rotate(3deg);
+        opacity: 0.7;
+    }
+
 }
