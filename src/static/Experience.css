@@ -1,3 +1,53 @@
+.main-experience {
+    position: relative;
+    font-family: var(--font-main);
+    background: linear-gradient(to bottom,
+            #45b0ce8f 0%,
+            #ffffff 100%);
+    padding-bottom: 70px;
+}
+
 .education-title {
-    margin-top: 100px;
+    margin: 0;
+    padding: 0;
+}
+
+.exp-submain {
+    position: relative;
+}
+
+.exp-submain::after {
+    content: "";
+    position: absolute;
+    bottom: 9px;
+    left: -450px;
+    width: 80%;
+    height: 80%;
+    background: url('../assets/cloud2.png') no-repeat center center;
+    background-size: contain;
+    z-index: 3;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+.experience-content {
+    margin: var(--space-lg) auto 0;
+    padding: var(--space-lg) var(--space-md);
+    max-width: 1080px;
+    background: linear-gradient(to bottom,
+            #fcc2aac3 10%,
+            #ffffff 100%);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-md);
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+
+@media (max-width: 768px) {
+    .main-experience {
+        padding: 20px;
+    }
 }

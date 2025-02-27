@@ -6,6 +6,7 @@ import './static/global.css';  // Import global CSS
 import Articles from './components/Articles';
 import Education from './components/Education';
 import Experience from './components/Experience';
+import Intervention from './components/Intervention';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Articles />
       <Education />
       <Experience />
+      <Intervention />
     </div>
   );
 }

@@ -4,6 +4,12 @@
     font-family: var(--font-main);
 }
 
+.main-education {
+    background: linear-gradient(to bottom, #c5336c03 0%, #df79a15e 51%, #45b0ce8f 100%);
+    padding-bottom: 80px;
+
+}
+
 .sub-main-education {
     overflow-x: hidden;
 }
@@ -13,14 +19,15 @@
     content: "";
     position: absolute;
     bottom: 80px;
-    right: -450px;
+    right: -490px;
     width: 90%;
     height: 80%;
     background: url(../assets/cloud.png) no-repeat center center;
     background-size: contain;
-    opacity: 0.7;
     z-index: 0;
-    scale: 0.4;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+    scale: 0.5;
 }
 
 .education-images {
@@ -30,6 +37,7 @@
     margin: 0 auto;
     overflow: hidden;
     background: transparent;
+    padding-bottom: 50px;
 }
 
 /* Base styles for all images */
@@ -182,7 +190,9 @@
     margin: var(--space-lg) auto 0;
     padding: var(--space-lg) var(--space-md);
     max-width: 1080px;
-    background: linear-gradient(to bottom, #fce1e8, #eef8fc);
+    background: linear-gradient(to bottom,
+            #f27c4955 10%,
+            #ffffff 100%);
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: var(--radius-md);
     box-shadow: var(--shadow-md);
@@ -222,7 +232,7 @@
 
 .science p,
 .keystone p {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-lg);
     line-height: var(--line-height-normal);
     color: #555;
     margin: 0 auto var(--space-sm) auto;
@@ -249,7 +259,10 @@
 
 @media (max-width: 786px) {
 
-    .main-education,
+    .main-education {
+        padding: 20px;
+    }
+
     .education-story {
         padding: 10px;
     }
