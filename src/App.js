@@ -1,23 +1,37 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 import Header from './components/Header';
-import Banner from './components/Banner';  // Import your Banner component
-import './static/global.css';  // Import global CSS
+import Banner from './components/Banner';  // Banner component
+import './static/global.css';  // Global CSS
 import Articles from './components/Articles';
 import Education from './components/Education';
 import Experience from './components/Experience';
 import Intervention from './components/Intervention';
+import ArticlePage from './components/ArticlesPage'; // Component for individual article details
 
 function App() {
   return (
-    <div className="App">
+    <Router>
       <Header />
-      <Banner />
-      <Articles />
-      <Education />
-      <Experience />
-      <Intervention />
-    </div>
+      <Routes>
+        {/* Main Homepage */}
+        <Route
+          path="/"
+          element={
+            <>
+              <Banner />
+              <Articles />
+              <Education />
+              <Experience />
+              <Intervention />
+            </>
+          }
+        />
+        {/* Article Details Page */}
+        <Route path="/article/:slug" element={<ArticlePage />} />
+      </Routes>
+    </Router>
   );
 }
 

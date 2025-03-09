@@ -1,55 +1,50 @@
-/* ---------------------------
-   GLOBAL & DESKTOP STYLES
---------------------------- */
-
-/* Header container */
 .header-main {
     background: var(--color-blue);
     font-family: var(--font-main);
     display: flex;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--space-md) var(--space-lg);
     position: relative;
+    transition: all 0.3s ease;
 }
 
-/* Header Title */
+/* Scrolled state: fixed, smaller, centered */
+.header-main.scrolled {
+    position: fixed;
+    width: 80%;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0.5rem var(--space-lg);
+    border-radius: 50px;
+    z-index: 1200;
+    height: 80px;
+}
+
+/* Header Title (logo) */
 .header-title img {
-    color: var(--color-white);
-    font-weight: 700;
-    padding: var(--space-md);
     width: 130px;
+    transition: width 0.3s ease;
 }
 
-/* Desktop Menu (hidden by default; appears on hover) */
+/* When scrolled, reduce logo size by 20% */
+.header-main.scrolled .header-title img {
+    width: 104px;
+}
+
+/* Desktop Navigation - always visible with transparent background */
 .desktop-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    display: flex;
-    justify-content: center;
-    background-color: var(--color-pink);
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(-10px);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-/* Show desktop menu on header hover */
-.header-main:hover .desktop-menu {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
+    display: block;
+    background-color: transparent;
 }
 
 .desktop-menu ul {
     list-style: none;
     display: flex;
-    justify-content: center;
-    align-items: center;
     gap: var(--space-xxl);
     margin: 0;
-    padding: var(--space-md);
+    padding: var(--space-md) 0;
 }
 
 .desktop-menu li a {
@@ -59,11 +54,9 @@
     font-weight: var(--font-weight-semibold);
     position: relative;
     display: inline-block;
-    /* Added for transform scaling to work */
     transition: transform 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
 }
 
-/* Underline effect */
 .desktop-menu li a::after {
     content: "";
     position: absolute;
@@ -75,7 +68,6 @@
     transition: width 0.3s ease;
 }
 
-/* Hover state: scale text, increase font weight, change color, and reveal underline */
 .desktop-menu li a:hover {
     transform: scale(1.1);
     font-weight: var(--font-weight-bold);
@@ -86,30 +78,32 @@
 }
 
 /* ---------------------------
-   MOBILE STYLES
+   Mobile Header Styles
 --------------------------- */
 
-/* Quick Menu Button at the Bottom Center */
+/* Quick Menu Button at the Bottom Center (for mobile) */
 .quick-menu-button {
     display: none;
-    /* hidden on desktop */
+    /* hidden on desktop by default */
 }
 
-/* The horizontally scrollable mobile menu container */
+/* Mobile Navigation Menu (horizontally scrollable) */
 .mobile-scroll-menu {
     display: none;
-    /* hidden on desktop */
+    /* hidden on desktop by default */
 }
 
-/* -------------- MEDIA QUERIES -------------- */
+/* ---------------------------
+   Media Queries (Mobile)
+--------------------------- */
 @media (max-width: 786px) {
 
-    /* Hide desktop menu on mobile */
+    /* Hide desktop navigation on mobile */
     .desktop-menu {
         display: none;
     }
 
-    /* Quick Menu Button (visible on mobile, fixed at bottom center) */
+    /* Show Quick Menu Button on mobile */
     .quick-menu-button {
         position: fixed;
         bottom: var(--space-md);
@@ -128,26 +122,11 @@
         transition: background 0.3s ease;
     }
 
-    /* Optional icon block */
-    .menu-icon {
-        display: inline-block;
-        width: 20px;
-        height: 20px;
-        background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTQgN2g2VjVINFY3em0wIDRoNnYtMkg0djJ6bTAgNGg2di0ySDR2MnoiLz48L3N2Zz4=') no-repeat center center;
-        background-size: contain;
-        margin-right: var(--space-xs);
-    }
-
-    .menu-text {
-        font-size: var(--font-size-md);
-        font-weight: var(--font-weight-bold);
-    }
-
     .quick-menu-button:hover {
         background: var(--color-orange);
     }
 
-    /* Horizontally scrollable mobile menu */
+    /* Mobile Scroll Menu */
     .mobile-scroll-menu {
         position: fixed;
         bottom: 0;
@@ -166,7 +145,6 @@
         backdrop-filter: blur(14px);
     }
 
-    /* When open, slide up into view */
     .mobile-scroll-menu.open {
         transform: translateY(0);
     }
@@ -180,17 +158,12 @@
         overflow-x: auto;
         scrollbar-width: none;
         -ms-overflow-style: none;
-
     }
-
-
 
     .mobile-scroll-menu ul::-webkit-scrollbar {
         display: none;
-        /* Chrome, Safari, Opera */
     }
 
-    /* Each link styled like a "card" */
     .mobile-scroll-menu li {
         flex: 0 0 auto;
         background: var(--color-white);

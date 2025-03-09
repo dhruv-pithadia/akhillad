@@ -127,6 +127,20 @@
     background: #f0f0f0;
 }
 
+.article-icon-svg {
+    width: 64px;
+    height: 64px;
+    color: var(--color-pink);
+    margin-bottom: var(--space-md);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.card-article:hover .article-icon-svg {
+    color: var(--color-orange);
+}
+
 @media (max-width: 786px) {
     .card-article {
         width: 220px;

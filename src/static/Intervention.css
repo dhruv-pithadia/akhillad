@@ -141,21 +141,13 @@
     }
 }
 
-/* Each slide: fill the available space with gradient */
 .slide-content {
-    /* No border-radius or box-shadow for a seamless full-bleed look */
     border-radius: 0;
     box-shadow: none;
     margin: 0;
     padding: 0;
-
-    /* Make sure it stretches across the entire slide */
     width: 100%;
-    /* Set a min-height if you want consistent tall slides; adjust as needed */
     min-height: 400px;
-
-    /* Full coverage gradient from white to #00A7D6 */
-    /* background: linear-gradient(to bottom, #ffffff 0%, #00A7D6 100%); */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -166,7 +158,6 @@
 .slide-content h2,
 .slide-content p {
     color: #333;
-    /* or white, depending on your preference */
     margin: 1rem;
 }
 
@@ -197,4 +188,69 @@
 .slick-next:before {
     color: #333;
     font-size: 24px;
+}
+
+
+
+.slide-content {
+    width: 100%;
+    min-height: 400px;
+    display: flex !important;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+/* Text block on the left */
+.slide-text {
+    flex: 1;
+    margin-right: 1rem;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+/* Heading styling */
+.slide-text h2 {
+    font-size: 2rem;
+    color: var(--color-orange);
+    font-weight: 900;
+    margin-bottom: 1rem;
+}
+
+/* Paragraph styling */
+.slide-text p {
+    font-size: 24px;
+    line-height: 1.5;
+    margin: 0;
+    text-align: justify;
+    /* remove default paragraph margin if desired */
+}
+
+/* Image block on the right */
+.slide-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* The actual image */
+.slide-image img {
+    max-width: 400px;
+    height: auto;
+
+}
+
+@media (max-width: 768px) {
+    .slide-content {
+        flex-direction: column;
+    }
+
+    .slide-text p {
+        font-size: 18px;
+    }
+
 }

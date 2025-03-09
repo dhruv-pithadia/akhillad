@@ -2,8 +2,10 @@ import React, { Component, createRef } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
 import "../static/Intervention.css";
+import earlylife from "../assets/early-life.png"
+import afterdiagnosis from "../assets/after-daignosis.png"
+import schooling from "../assets/Schooling.png"
 
 /* Example card data */
 const cardsData = [
@@ -164,33 +166,56 @@ export default class Intervention extends Component {
                     <Slider ref={this.sliderRef} {...this.sliderSettings}>
 
                         <div className="slide-content">
-                            <h2>Early Life</h2>
-                            <p>
-                                Early Intervention to BioMedical protocol. As we started with behavior modification, we gradually moved to a BioMedical approach using diet and supplements.
-                            </p>
+                            <div className="slide-text">
+                                <h2>Early Life</h2>
+                                <p>
+                                    Akhil was responding to his name and had eye contact before his birthday
+                                    and he regressed into AUTISM after his first birthday. Early Intervention
+                                    started at 23 months.
+                                </p>
+                            </div>
+
+                            <div className="slide-image">
+                                <img src={earlylife} alt="Early Life" />
+                            </div>
                         </div>
                         <div className="slide-content">
-                            <h2>After Diagnosis</h2>
-                            <p>
-                                Early Intervention to BioMedical protocol. As we started with behavior modification, we gradually moved to a BioMedical approach using diet and supplements.
-                            </p>
+                            <div className="slide-text">
+                                <h2>After Diagnosis</h2>
+                                <h3>Early Intervention to BioMedical protocol</h3>
+                                <p>
+                                    As we started with Behavior Modification we gradually moved to BioMedical Intervention approach using diet, vitamins supplements under BioMedical doctors supervision
+                                </p>
+                            </div>
+
+                            <div className="slide-image">
+                                <img src={afterdiagnosis} alt="After Diagnosis" />
+                            </div>
                         </div>
 
                         <div className="slide-content">
-                            <h2>A New Perspective</h2>
-                            <p>More content detailing other aspects of the intervention process.</p>
-                        </div>
+                            <div className="slide-text">
+                                <h2>Schooling</h2>
+                                <p>
+                                    I attended many special education schools in New Jersey. In schools they followed Applied Behavior Analysis(ABA), DIR Floor time, physical therapy, occupational therapy, speech therapy, supported typing, reflex integration, neuro development approach with some supported typing and rapid prompting method. But they never gave me transcripts and had no college track
+                                </p>
+                            </div>
 
-                        <div className="slide-content">
-                            <h2>Continued Journey</h2>
-                            <p>Further insights into the progress and adaptations over time.</p>
+                            <div className="slide-image">
+                                <img src={schooling} alt="Schooling" />
+                            </div>
                         </div>
-
                         <div className="slide-content">
-                            <h2>Final Insights</h2>
-                            <p>
-                                When all slides have been viewed, normal vertical scrolling will resume.
-                            </p>
+                            <div className="slide-text">
+                                <h2>Brain Development</h2>
+                                <h3>Neuro Development protocol</h3>
+                                <p>
+                                    At age 11 we explored Neuro Development approach after getting trained at the Family Hope Center. Implemented entire protocol for 6 months in India. During this time we were learning about brain development and how the skipping any development stage like crawling, creeping was not good. Akhil definitely had skipped such stages.                                </p>
+                            </div>
+
+                            <div className="slide-image">
+                                <img src={schooling} alt="Schooling" />
+                            </div>
                         </div>
                     </Slider>
                 </div>
