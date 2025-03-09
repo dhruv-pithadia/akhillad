@@ -1,7 +1,7 @@
 {
   "name": "akhil_website",
-  "homepage": "https://github.com/dhruv-pithadia/akhillad",
-  "version": "0.1.0",
+  "homepage": "https://dhruv-pithadia.github.io/akhillad/",
+  "version": "0.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
