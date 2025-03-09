@@ -183,7 +183,7 @@
     margin-top: var(--space-xxl);
     margin-bottom: var(--space-xxl);
     text-align: center;
-    font-size: var(--font-size-xxl);
+    font-size: 3rem;
 }
 
 .education-content {

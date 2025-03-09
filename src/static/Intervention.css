@@ -7,27 +7,30 @@
 
 .intervention-title {
     text-align: center;
-    font-size: 2rem;
+    font-size: 3rem;
     color: var(--color-pink);
     margin-bottom: 2rem;
 }
 
 /* Cards Section */
+/* Cards Section */
+/* Cards Section */
 .intervention-submain {
     display: flex;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 2rem;
     transition: all 0.3s ease;
     margin-bottom: 3rem;
-    /* space before carousel */
 }
 
+/* Each card takes roughly 33.33% of the row (minus gap) and will wrap after three */
 .intervention-card {
     background: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    flex: 1;
-    min-width: 0;
+    flex: 1 1 calc(33.33% - 2rem);
+    min-width: 360px;
     overflow: hidden;
     padding: 1rem;
     display: flex;
@@ -43,6 +46,26 @@
 .intervention-card.collapsed {
     flex: 1;
 }
+
+/* Replace video wrapper with icon wrapper for intervention cards */
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px;
+    /* same as the old video-wrapper height */
+    background: #f0f0f0;
+    /* light background to contrast the icon */
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.card-icon {
+    font-size: 4rem;
+    color: var(--color-orange);
+}
+
+/* (Keep the rest of your existing CSS unchanged) */
 
 .intervention-card h3 {
     margin: 0.5rem 0 0.25rem;
@@ -253,4 +276,103 @@
         font-size: 18px;
     }
 
+    .main-intervention {
+        padding: inherit;
+    }
+}
+
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    animation: fadeIn 0.4s ease forwards;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    position: relative;
+    width: 85%;
+    max-width: 900px;
+    background: #000;
+    border-radius: 12px;
+    overflow: hidden;
+    animation: zoomIn 0.4s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+    padding: 1rem;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.player-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    /* 16:9 Aspect Ratio */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.player-wrapper iframe,
+.player-wrapper video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    font-size: 1.8rem;
+    line-height: 1;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    z-index: 10;
+    opacity: 0.9;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-close-button:hover {
+    opacity: 1;
+    transform: scale(1.1) rotate(90deg);
+    background: #fff;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
 }
