@@ -15,7 +15,8 @@ import Contact from './components/Contact';
 
 function App() {
   return (
-    <Router>
+    // Add basename pointing to your repo name "/akhillad"
+    <Router basename="/akhillad">
       <Header />
       <Routes>
         {/* Main Homepage */}
