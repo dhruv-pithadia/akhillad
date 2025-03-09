@@ -13,14 +13,14 @@
 }
 
 /* Cards Section */
-/* Cards Section */
-/* Cards Section */
 .intervention-submain {
     display: flex;
     flex-wrap: wrap;
+    /* Enable wrapping into new rows */
     gap: 2rem;
     transition: all 0.3s ease;
     margin-bottom: 3rem;
+    /* space before carousel */
 }
 
 /* Each card takes roughly 33.33% of the row (minus gap) and will wrap after three */
@@ -65,8 +65,7 @@
     color: var(--color-orange);
 }
 
-/* (Keep the rest of your existing CSS unchanged) */
-
+/* Card Text Styles */
 .intervention-card h3 {
     margin: 0.5rem 0 0.25rem;
     font-size: 1.2rem;
@@ -99,6 +98,7 @@
     background: #e05417;
 }
 
+/* Video Wrapper (for fallback or if you need it) */
 .video-wrapper {
     position: relative;
     width: 100%;
@@ -146,24 +146,24 @@
     position: relative;
 }
 
-/* Carousel Section: full width */
+/* Carousel Section: full width and removing default slick spacing */
 .carousel-section {
     width: 100%;
     position: relative;
-
-    /* Remove default slick padding/margins if any */
-    .slick-list,
-    .slick-track {
-        margin: 0;
-        padding: 0;
-    }
-
-    .slick-slide {
-        margin: 0;
-        padding: 0;
-    }
 }
 
+.carousel-section .slick-list,
+.carousel-section .slick-track {
+    margin: 0;
+    padding: 0;
+}
+
+.carousel-section .slick-slide {
+    margin: 0;
+    padding: 0;
+}
+
+/* Slide Content */
 .slide-content {
     border-radius: 0;
     box-shadow: none;
@@ -177,14 +177,14 @@
     text-align: center;
 }
 
-/* Optional: style the text inside the slide content if needed */
+/* Optional text styling inside slide content */
 .slide-content h2,
 .slide-content p {
     color: #333;
     margin: 1rem;
 }
 
-/* Slick Dots Customization (unchanged) */
+/* Slick Dots Customization */
 .slick-dots li button:before {
     font-size: 0;
     color: transparent;
@@ -206,15 +206,54 @@
     background: #ffeb3b;
 }
 
-/* Slick Arrows (optional styling) */
-.slick-prev:before,
-.slick-next:before {
-    color: #333;
-    font-size: 24px;
+/* Slick Arrows - Positioned absolutely on top of the carousel */
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
 
+/* Left Arrow */
+.slick-prev {
+    left: 1rem;
+}
 
+/* Right Arrow */
+.slick-next {
+    right: 1rem;
+}
 
+/* Remove default arrow content and insert custom arrows */
+.slick-prev:before,
+.slick-next:before {
+    content: "" !important;
+    font-size: 0;
+}
+
+.slick-prev::after {
+    content: "←";
+    font-size: 1.4rem;
+    color: #333;
+}
+
+.slick-next::after {
+    content: "→";
+    font-size: 1.4rem;
+    color: #333;
+}
+
+/* Slide Content Layout */
 .slide-content {
     width: 100%;
     min-height: 400px;
@@ -249,7 +288,6 @@
     line-height: 1.5;
     margin: 0;
     text-align: justify;
-    /* remove default paragraph margin if desired */
 }
 
 /* Image block on the right */
@@ -264,9 +302,9 @@
 .slide-image img {
     max-width: 400px;
     height: auto;
-
 }
 
+/* Responsive: Mobile adjustments for the carousel section */
 @media (max-width: 768px) {
     .slide-content {
         flex-direction: column;
@@ -277,7 +315,15 @@
     }
 
     .main-intervention {
-        padding: inherit;
+        padding: 20px;
+    }
+
+    .slick-prev {
+        left: 10px;
+    }
+
+    .slick-next {
+        right: 10px;
     }
 }
 
@@ -374,5 +420,33 @@
     to {
         transform: scale(1);
         opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+
+    /* Position the Slick arrows inside the carousel frame */
+    .slick-prev,
+    .slick-next {
+        top: 50%;
+        /* Vertically centered */
+        transform: translateY(-50%);
+        width: 36px;
+        height: 36px;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 50%;
+        border: 1px solid #ddd;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        z-index: 5;
+    }
+
+    .slick-prev {
+        left: 10px !important;
+        /* Inside from the left edge */
+    }
+
+    .slick-next {
+        right: 10px !important;
+
     }
 }
