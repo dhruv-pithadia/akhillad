@@ -60,8 +60,11 @@ const Header = () => {
                         <a href="#achievements">Achievements</a>
                     </li>
                     <li>
-                        <a href="#recentWork">Recent work</a>
+                        <a href="#publishedWork">Published Works</a>
                     </li>
+                    {/* <li>
+                        <a href="recentNews">Recent work</a>
+                    </li> */}
                 </ul>
             </nav>
 

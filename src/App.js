@@ -9,6 +9,9 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Intervention from './components/Intervention';
 import ArticlePage from './components/ArticlesPage'; // Component for individual article details
+import Achievements from './components/Achievements';
+import PublishedWorks from './components/PublishedWork';
+import Contact from './components/Contact';
 
 function App() {
   return (
@@ -25,6 +28,9 @@ function App() {
               <Education />
               <Experience />
               <Intervention />
+              <Achievements />
+              <PublishedWorks />
+              <Contact />
             </>
           }
         />
