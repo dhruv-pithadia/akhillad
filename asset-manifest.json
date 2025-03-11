@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/akhillad/static/css/main.b480079f.css",
-    "main.js": "/akhillad/static/js/main.aa73c2c9.js",
+    "main.js": "/akhillad/static/js/main.699be8e3.js",
     "reactPlayerYouTube.js": "/akhillad/static/js/reactPlayerYouTube.f46a6535.chunk.js",
     "reactPlayerSoundCloud.js": "/akhillad/static/js/reactPlayerSoundCloud.c0bcefe5.chunk.js",
     "reactPlayerVimeo.js": "/akhillad/static/js/reactPlayerVimeo.cdb658c5.chunk.js",
@@ -42,7 +42,7 @@
     "static/media/slick.woff": "/akhillad/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/akhillad/index.html",
     "main.b480079f.css.map": "/akhillad/static/css/main.b480079f.css.map",
-    "main.aa73c2c9.js.map": "/akhillad/static/js/main.aa73c2c9.js.map",
+    "main.699be8e3.js.map": "/akhillad/static/js/main.699be8e3.js.map",
     "reactPlayerYouTube.f46a6535.chunk.js.map": "/akhillad/static/js/reactPlayerYouTube.f46a6535.chunk.js.map",
     "reactPlayerSoundCloud.c0bcefe5.chunk.js.map": "/akhillad/static/js/reactPlayerSoundCloud.c0bcefe5.chunk.js.map",
     "reactPlayerVimeo.cdb658c5.chunk.js.map": "/akhillad/static/js/reactPlayerVimeo.cdb658c5.chunk.js.map",
@@ -61,6 +61,6 @@
   },
   "entrypoints": [
     "static/css/main.b480079f.css",
-    "static/js/main.aa73c2c9.js"
+    "static/js/main.699be8e3.js"
   ]
 }
