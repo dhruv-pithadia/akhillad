@@ -1,7 +1,7 @@
 {
   "name": "akhil_website",
   "homepage": "https://www.akhillad.com",
-  "version": "0.0.7",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
     "@testing-library/dom": "^10.4.0",

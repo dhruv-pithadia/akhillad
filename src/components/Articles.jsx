@@ -60,7 +60,7 @@ import "../static/Articles.css";
 
 export default class Articles extends Component {
     openArticleInNewTab = (article) => {
-        const url = `/article/${article.slug}`;
+        const url = `#/article/${article.slug}`;
         window.open(url, "_blank");
     };
 
