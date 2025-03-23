@@ -89,34 +89,34 @@ const Header = () => {
             <div className={`mobile-scroll-menu ${mobileMenuOpen ? "open" : ""}`}>
                 <ul>
                     <li>
-                        <a href="#myArticles" onClick={closeMobileMenu}>
+                        <Link to="myArticles" smooth={true} duration={500} offset={-70} onClick={closeMobileMenu}>
                             My Articles
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#education" onClick={closeMobileMenu}>
+                        <Link to="education" smooth={true} duration={500} offset={-70} onClick={closeMobileMenu}>
                             Education
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#experience" onClick={closeMobileMenu}>
+                        <Link to="experience" smooth={true} duration={500} offset={-70} onClick={closeMobileMenu}>
                             Experience
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#autism" onClick={closeMobileMenu}>
+                        <Link to="autism" smooth={true} duration={500} offset={-70} onClick={closeMobileMenu}>
                             Autism Intervention
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#achievements" onClick={closeMobileMenu}>
+                        <Link to="achievements" smooth={true} duration={500} offset={-70} onClick={closeMobileMenu}>
                             Achievements
-                        </a>
+                        </Link>
                     </li>
                     <li>
-                        <a href="#recentWork" onClick={closeMobileMenu}>
-                            Recent work
-                        </a>
+                        <Link to="publishedWork" smooth={true} duration={500} offset={-70} onClick={closeMobileMenu}>
+                            Published Works
+                        </Link>
                     </li>
                 </ul>
             </div>
