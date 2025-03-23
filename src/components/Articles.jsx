@@ -60,8 +60,8 @@ import "../static/Articles.css";
 
 export default class Articles extends Component {
     openArticleInNewTab = (article) => {
-        const url = `/akhillad/article/${article.slug}`;
-        window.open(url, "_blank"); // Opens the article detail page in a new tab
+        const url = `/article/${article.slug}`;
+        window.open(url, "_blank");
     };
 
     render() {
