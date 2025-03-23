@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from 'react-scroll';
 import { FaBars } from "react-icons/fa";
 import "../static/Header.css";
 import logo from "../assets/logo.png";
@@ -39,7 +40,7 @@ const Header = () => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="desktop-menu">
+            {/* <nav className="desktop-menu">
                 <ul>
                     <li>
                         <a href="#banner">Home</a>
@@ -62,9 +63,19 @@ const Header = () => {
                     <li>
                         <a href="#publishedWork">Published Works</a>
                     </li>
-                    {/* <li>
-                        <a href="recentNews">Recent work</a>
-                    </li> */}
+                    
+                </ul>
+            </nav> */}
+
+            <nav className="desktop-menu">
+                <ul>
+                    <li><Link to="banner" smooth={true} duration={500} offset={-70}>Home</Link></li>
+                    <li><Link to="myArticles" smooth={true} duration={500} offset={-70}>My Articles</Link></li>
+                    <li><Link to="education" smooth={true} duration={500} offset={-70}>Education</Link></li>
+                    <li><Link to="experience" smooth={true} duration={500} offset={-70}>Experience</Link></li>
+                    <li><Link to="autism" smooth={true} duration={500} offset={-70}>Autism Intervention</Link></li>
+                    <li><Link to="achievements" smooth={true} duration={500} offset={-70}>Achievements</Link></li>
+                    <li><Link to="publishedWork" smooth={true} duration={500} offset={-70}>Published Works</Link></li>
                 </ul>
             </nav>
 
