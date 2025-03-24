@@ -47,6 +47,7 @@
     padding: var(--space-md) 0;
 }
 
+/* 
 .desktop-menu li a {
     color: var(--color-white);
     text-decoration: none;
@@ -75,6 +76,38 @@
 }
 
 .desktop-menu li a:hover::after {
+    width: 100%;
+} */
+
+.desktop-menu li {
+    color: var(--color-white);
+    text-decoration: none;
+    font-size: var(--font-size-md);
+    font-weight: var(--font-weight-semibold);
+    position: relative;
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease, font-weight 0.3s ease;
+    cursor: pointer;
+    /* 👈 important */
+}
+
+.desktop-menu li::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: var(--color-orange);
+    transition: width 0.3s ease;
+}
+
+.desktop-menu li:hover {
+    transform: scale(1.1);
+    font-weight: var(--font-weight-bold);
+}
+
+.desktop-menu li:hover::after {
     width: 100%;
 }
 
