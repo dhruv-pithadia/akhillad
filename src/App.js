@@ -56,8 +56,9 @@ import Experience from './components/Experience';
 import Intervention from './components/Intervention';
 import ArticlePage from './components/ArticlesPage';
 import Achievements from './components/Achievements';
-import PublishedWorks from './components/PublishedWork';
+// import PublishedWorks from './components/PublishedWork';
 import Contact from './components/Contact';
+import News from './components/news';
 
 function App() {
   return (
@@ -74,7 +75,8 @@ function App() {
               <Experience />
               <Intervention />
               <Achievements />
-              <PublishedWorks />
+              {/* <PublishedWorks /> */}
+              <News />
               <Contact />
             </>
           }
