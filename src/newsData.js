@@ -2,6 +2,17 @@
 
 export const newsData = [
     {
+        title: "Akhil Lad Featured on Substack: 'This Is What It Means to Truly Listen'",
+        subtitle: "An emotional and profound account shared by Dr. Ajay",
+        description: "In a heartfelt Substack article, Dr. Ajay reflects on his transformative encounter with Akhil Lad. Through typed words, Akhil challenges the very nature of communication, urging us to rethink what it means to truly listen and connect with non-speaking individuals.",
+        category: "Press",
+        date: "2024-05-06",
+        paperLink: "https://substack.com/inbox/post/161922082?r=3izcpe&utm_campaign=post&utm_medium=web",
+        videoLink: "https://youtu.be/_aO-qpjcKBs",
+        featured: true,
+        thumbnail: "https://img.youtube.com/vi/_aO-qpjcKBs/hqdefault.jpg"
+    },
+    {
         title: "Akhil's Journey to College as a Non-Speaking Neurodiverse Student",
         subtitle: "Featured Speaker at World Autism Conference",
         description: "Akhil Lad shared his inspiring journey at the World Autism Conference, detailing his experiences and challenges as a non-speaking neurodiverse student pursuing higher education.",
@@ -9,8 +20,8 @@ export const newsData = [
         date: "2024-04-09",
         paperLink: "https://worldautismconference.org/speakers-blog/akhil-lad",
         videoLink: "",
-        featured: true,
-        thumbnail: "https://worldautismconference.org/images/akhil-lad.jpg"
+        featured: false,
+        thumbnail: "/images/autism-association.png"
     },
     {
         title: "Believe: The Akhil Lad Story",
@@ -32,7 +43,7 @@ export const newsData = [
         paperLink: "",
         videoLink: "https://podcasts.apple.com/us/podcast/akhils-mom-manisha-lad-vulnerably-shares-their-journey/id1678006335?i=1000685521270",
         featured: false,
-        thumbnail: "https://is1-ssl.mzstatic.com/image/thumb/Podcasts126/v4/9e/1c/5c/9e1c5c8e-3e3d-1f4c-4b2e-6a3b9b1b7e4e/mza_15211744158667149965.jpg/626x0w.webp"
+        thumbnail: "/images/ripple.webp"
     },
     {
         title: "Global Virtual Neurodiverse Symposium 2023",
@@ -43,17 +54,9 @@ export const newsData = [
         paperLink: "https://akhilautismnds23.vfairs.com/",
         videoLink: "",
         featured: false,
-        thumbnail: "https://akhilautismnds23.vfairs.com/images/symposium-banner.jpg"
+        thumbnail: "/images/neurodiverse-symposium.png"
     },
-    {
-        title: "Akhil's Feature in Exceptional Minds Magazine",
-        subtitle: "Highlighting Akhil's College Education Journey",
-        description: "Exceptional Minds magazine covered Akhil's journey and experiences in pursuing college education as a neurodiverse individual.",
-        category: "Press",
-        date: "2023-05-20",
-        paperLink: "",
-        videoLink: "",
-        featured: false,
-        thumbnail: "https://akhillad.me/images/exceptional-minds.jpg"
-    }
+
+
+
 ];
