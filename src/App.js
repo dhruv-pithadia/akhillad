@@ -59,6 +59,7 @@ import Achievements from './components/Achievements';
 // import PublishedWorks from './components/PublishedWork';
 import Contact from './components/Contact';
 import News from './components/news';
+import Presentations from './components/MyPresentations';
 
 function App() {
   return (
@@ -73,6 +74,7 @@ function App() {
               <Articles />
               <Education />
               <Experience />
+              <Presentations />
               <Intervention />
               <Achievements />
               {/* <PublishedWorks /> */}

@@ -64,6 +64,7 @@ const Header = () => {
                     <li onClick={() => handleNavigate("autism")}>Autism Intervention</li>
                     <li onClick={() => handleNavigate("achievements")}>Achievements</li>
                     <li onClick={() => handleNavigate("news")}>News & Media</li>
+                    <li onClick={() => handleNavigate("presentations")}>Presentations</li>
                 </ul>
             </nav>
 
@@ -82,6 +83,7 @@ const Header = () => {
                     <li onClick={() => handleNavigate("autism")}>Autism Intervention</li>
                     <li onClick={() => handleNavigate("achievements")}>Achievements</li>
                     <li onClick={() => handleNavigate("news")}>News & Media</li>
+                    <li onClick={() => handleNavigate("presentations")}>Presentations</li>
                 </ul>
             </div>
         </div>
